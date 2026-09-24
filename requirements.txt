@@ -1,0 +1,21 @@
+# Install torch/torchaudio first from the CUDA index:
+#   pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu126
+torch
+torchaudio
+# >=4.56: Indic-Transcribe passes dtype= to from_pretrained. <5: IndicTransToolkit 1.1.1 imports
+# transformers.tokenization_utils.PreTrainedTokenizerBase, removed in v5.
+transformers>=4.56,<5
+IndicTransToolkit
+sentencepiece>=0.1.99
+soundfile>=0.12
+sounddevice
+silero-vad
+numpy
+pytest
+# desktop app: hotkey + typing, Windows voices, tray icon, default-device tracking, exe launcher
+pynput
+pyttsx3
+pystray
+pillow
+pycaw
+pyinstaller

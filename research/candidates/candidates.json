@@ -1,0 +1,157 @@
+[
+  {
+    "id": "C1",
+    "name": "Indic-Transcribe-flex (bodhan-ai/indic-transcribe-flex), mixed-script mode",
+    "type": "speech recognition model, 1.2B parameters, FastConformer encoder + Transformer decoder, based on nvidia/canary-1b-v2",
+    "runs_where": "Local. Open weights, gated: must accept the Indic Open Model License on Hugging Face. Checkpoint 4.6 GB; fp16 weights about 2.4 GB by arithmetic (1.2B x 2 bytes).",
+    "evidence": [
+      "Voice of India benchmark (unscripted telephonic conversational speech), Tamil WER 10.8 as reported on the model card; the same card reports Indic Conformer 16.2, Gemini 3 Pro 15.5, Saaras V3 9.1. Source: bodhan-ai/indic-transcribe-flex README. This is the developer's own report, not an independent evaluation.",
+      "Card: 'Three transcription modes: Native script; Mixed script for native words in native script with English and numerals in Latin; Romanized for everything in Latin script.' Example given: 'मैंने कल 5 बजे 3 files upload कीं'.",
+      "Card: 'Code-mixing, natively. Indians rarely speak one language at a time. Indic-Transcribe transcribes Hinglish and other mixed speech as it is actually spoken.' Tags include code-switching, code-mixing, romanization, transliteration.",
+      "Card limitation: 'Mixed-script (ITN) mode can be wrong. Inverse text normalization is genuinely ambiguous in places, so mixed-script mode will occasionally get it wrong.'",
+      "Card limitation: 'Streaming is not available in pro. Use Indic-Transcribe-lite for real-time use.' Indic-Transcribe-lite is not published in the bodhan-ai Hugging Face organisation (models listed: indic-transcribe-flex, indic-transcribe-core, indic-speak, indic-ocr, indic-translate).",
+      "Card: single-pass decoding refuses audio longer than 45 s; model trained on clips up to 30 s; a long-form helper splits audio at pauses of at least 250 ms. Latency on an H100 is listed as 100 ms per request (in a commented-out section).",
+      "Card: 'an hour of audio runs in 48 s (77x realtime, 9.2 GiB of GPU memory)' on the NeMo path at batch size 8. VRAM at batch size 1 on a 6 GB laptop GPU is NOT measured.",
+      "Card: built-in language identification; for Tamil the language-ID accuracy is listed as 0.98.",
+      "Released August 2026 (announced by Mitesh Khapra, AI4Bharat, on X, 2026-08-17). No independent practitioner reports, Reddit threads, or YouTube demos of this model were found.",
+      "Runtime: Hugging Face path with code shipped in the repository (pip install torch torchaudio transformers sentencepiece soundfile); a NeMo path is also provided. Windows use is not explicitly documented.",
+      "YouTube (youtube_summaries.md, 14 videos reviewed): no video about Indic-Transcribe exists yet."
+    ],
+    "unknowns": "Actual VRAM and latency on an RTX 3050 6 GB; whether per-token confidence is exposed; independent accuracy."
+  },
+  {
+    "id": "C2",
+    "name": "Indic-Transcribe-core (bodhan-ai/indic-transcribe-core), native-script output",
+    "type": "speech recognition model, 1.2B parameters, based on nvidia/canary-1b-v2",
+    "runs_where": "Local. Open weights, gated with the Indic Open Model License. Same size class as C1 (about 2.4 GB fp16 weights by arithmetic).",
+    "evidence": [
+      "Voice of India benchmark Tamil WER 9.0 as reported on the model card (best Tamil number in that table; Saaras V3 9.1, Indic-Transcribe-flex 10.8, Indic Conformer 16.2). Metric described as OIWER, which accepts documented spelling and transliteration variants. Developer's own report.",
+      "Card: 'The model transcribes into the native script of the language being spoken' — no mixed-script or romanized mode (those are only in flex). English words spoken inside Tamil would therefore be written in Tamil script.",
+      "Card: 'Code-mixed audio: yes'; 'Code-mixing, natively.'",
+      "Card: 'The model code ships inside this repository, so there is nothing else to install — no NeMo'.",
+      "Same 30 s training-clip limit and pause-based long-form splitter as C1; no streaming.",
+      "No independent practitioner reports, Reddit threads, or YouTube demos found (released August 2026).",
+      "YouTube (youtube_summaries.md, 14 videos reviewed): no video about Indic-Transcribe exists yet."
+    ],
+    "unknowns": "VRAM and latency on RTX 3050; confidence output; independent accuracy."
+  },
+  {
+    "id": "C3",
+    "name": "AI4Bharat IndicConformer-600M multilingual (ai4bharat/indic-conformer-600m-multilingual)",
+    "type": "speech recognition model, 600M parameters, Conformer with hybrid CTC + RNNT decoders",
+    "runs_where": "Local. MIT license, gated access. Runs through transformers trust_remote_code with onnxruntime-gpu 1.20.1. fp16 weights about 1.2 GB by arithmetic.",
+    "evidence": [
+      "Voice of India paper (arXiv 2604.19151, AI4Bharat/IIT Madras + Josh Talks, independent of Bodhan): Tamil OIWER 19.9, best open-source model evaluated; cloud systems Sarvam Audio 14.2, Saarika 2.5 14.9, Gemini 3 Pro 15.7. Paper places IndicConformer in 'Tier I: Top-performing systems (WER <= 20%)'.",
+      "Voice of India paper: 'Indic Conformer WER peaking at 27.57% (slow) and 27.53% (very fast) versus 24.75% at moderate speeds' (cross-lingual average).",
+      "GitHub practitioner (gnanaprakash2918/AI-Media-Indexer issue #3, 2025-12-04): 'For Tamil, Whisper's accuracy is not as good as AI4Bharat's IndicConformer models' — chose to route Tamil to IndicConformer.",
+      "Model card: supports CTC and RNNT decoding, 22 Indian languages including Tamil; no streaming mentioned; no WER in the card.",
+      "CTC decoding produces per-frame probabilities that can be turned into word confidence (standard property of CTC; not documented in the card).",
+      "Output is native Tamil script; English words spoken inside Tamil come out transliterated in Tamil script (Voice of India paper notes 'non standardized native script renderings of English origin words in code mixed spontaneous speech').",
+      "YouTube: tutorials by Sudheendra S G (2026-05, IndicConformer pipeline with JSON/SRT output, 431 and 377 views); AI4Bharat demo video (2022). About 520k downloads on Hugging Face.",
+      "YouTube (Sudheendra S G, videos 70Nrt_FpHz4 and 7yWXkWvqSrA, 2026-05): full local install and batch transcription of a Tamil sample to JSON/TXT/SRT demonstrated on screen, run inside WSL2 on Windows; no accuracy percentage shown.",
+      "Same videos: Windows-native CUDA/library instability pushed the presenter to WSL2; dependencies had to be pinned to older versions of transformers, tokenizers, onnxruntime, onnx and huggingface-hub or installation broke.",
+      "Same video [17:52]: the pipeline has no automatic chunking; a custom silence-aware chunker is needed.",
+      "YouTube (AI4Bharat, video 7yWXkWvqSrA [00:00]): generic English-tuned tools produce 'broken accents and strange hallucinated text' on Hindi/Tamil (verbal claim)."
+    ],
+    "unknowns": "Latency on RTX 3050; Windows-specific issues with the ONNX remote code."
+  },
+  {
+    "id": "C4",
+    "name": "OpenAI Whisper large-v3-turbo via faster-whisper (CTranslate2) + ufal/whisper_streaming LocalAgreement",
+    "type": "speech recognition model, 809M parameters, encoder-decoder, 99 languages",
+    "runs_where": "Local. MIT license, no gating. fp16 weights about 1.6 GB by arithmetic; faster-whisper supports int8.",
+    "evidence": [
+      "Whisper paper (arXiv 2212.04356) Tamil WER for large-v2: Common Voice 9 16.1, FLEURS 17.5 (clean read speech). No published Tamil WER for large-v3 or turbo was found. Open-source Whisper was not evaluated on the Voice of India conversational benchmark.",
+      "OpenAI maintainer on github.com/openai/whisper discussion 2009: 'Whisper doesn't support code-switching inputs very well.'",
+      "faster-whisper issue 1476 (2026-09-10): with multilingual=True a window can be decoded in the previous window's language unless condition_on_previous_text=False — 'the default configuration of multilingual=True does not produce a multilingual transcript.'",
+      "Research cited in practitioner survey: Whisper large-v3 produces non-empty transcriptions for 40.3% of non-speech inputs (hallucination on silence); a voice-activity gate is required.",
+      "Streaming: ufal/whisper_streaming (3,673 stars) uses LocalAgreement — 'emit the transcripts that are confirmed by 2 iterations'. RealtimeSTT (10,145 stars) is VAD-centric. Word-level partial output while speaking is available.",
+      "X post (r4plh, 2026-03-18): 'Whisper fine-tunes for Hindi and Tamil? Worked. Telugu? Hallucinated text. Kannada? Output in the wrong script entirely.' X post (krishashok, 2022): 'Tamil is the best-performing Indian language on Whisper'.",
+      "YouTube: faster-whisper realtime tutorial (KARTIS, 31k views) shows large-v3 on GPU; a Tamil voice-assistant build (Karthik's Show, 2026-07, 2.5k views) uses Whisper large-v3 and mentions 'few problems'.",
+      "Widely installed on Windows (faster-whisper, whisper-writer, Buzz, OmniDictate).",
+      "YouTube (PKHA92gusTM, 2025-04, 1.3k views): official Whisper large/turbo run locally on CPU only on a mixed English+Tamil test phrase; output tagged language Tamil; presenter self-rated '90%' (not measured, noisy microphone); how English words were rendered was not shown.",
+      "YouTube (uimBp3c3Koo, 31k views): faster-whisper real-time transcription shown working smoothly in English only; never tested on Tamil; cuDNN version mismatch for CTranslate2 called out as a failure risk."
+    ],
+    "unknowns": "Turbo's Tamil accuracy on colloquial speech; whether English words come out in Latin or Tamil script on Tanglish."
+  },
+  {
+    "id": "C5",
+    "name": "vasista22/whisper-tamil-medium (Tamil fine-tune of Whisper medium) via faster-whisper conversion",
+    "type": "speech recognition model, 769M parameters, Tamil-only fine-tune",
+    "runs_where": "Local. Apache-2.0, no gating. fp16 weights about 1.5 GB by arithmetic; needs conversion to CTranslate2 for faster-whisper.",
+    "evidence": [
+      "Model card: FLEURS ta_in test WER 6.97; Common Voice 11 ta test WER 6.5. Both are read or prompted speech, not colloquial or code-switched.",
+      "Training data per card: IISc-MILE, ULCA, Shrutilipi, Microsoft Speech Corpus (Indian Languages), Google FLEURS, Babel — mostly clean or read speech.",
+      "776 downloads for medium; the small variant (vasista22/whisper-tamil-small) has about 151k downloads but no published WER.",
+      "Inherits Whisper behaviour: no native streaming (needs LocalAgreement or VAD chunking), hallucination on silence, single-language decoding per window.",
+      "No code-switching evaluation; fine-tuned only on Tamil, so English words are likely forced into Tamil script (not documented).",
+      "Not evaluated on Voice of India. No Reddit or YouTube reports specific to this checkpoint were found.",
+      "YouTube: no video about this checkpoint was found."
+    ],
+    "unknowns": "Accuracy on colloquial Tanglish; behaviour on English words."
+  },
+  {
+    "id": "C6",
+    "name": "Google Gemma 3n E4B (audio-input LLM) as a single model for transcription and formatting",
+    "type": "multimodal LLM with audio input, about 4B effective parameters",
+    "runs_where": "Local. Gated with manual approval; Gemma license. About 8 GB download; would need 4-bit quantisation to fit in 6 GB.",
+    "evidence": [
+      "Indic-Transcribe-flex card, Voice of India table: Gemma E4B Tamil WER 37.9 (average 36.1).",
+      "Public model card does not list which languages are supported for audio input (lead verification found NOT COVERED).",
+      "Would be a single model for both hearing and organising, which the user prefers, but no Tamil ASR demo or practitioner report was found.",
+      "GitHub Next localjev study: Gemma 4 E4B accuracy fell from 50.0% to 12.5% when 2,048 unrelated words were added to the input (distraction sensitivity for a small model).",
+      "No streaming speech recognition; audio is processed in clips."
+    ],
+    "unknowns": "Whether Tamil audio is officially supported; VRAM when quantised."
+  },
+  {
+    "id": "C7",
+    "name": "Meta Omnilingual ASR LLM 1B",
+    "type": "speech recognition model, 1B parameters, 1,600+ languages",
+    "runs_where": "Local. Open weights. About 2 GB fp16 by arithmetic.",
+    "evidence": [
+      "Voice of India paper: OmniASR LLM 1B Tamil OIWER 49.0; OmniASR LLM 7B 43.1. Paper Tier III: 'Deepgram Nova-3 and OmniASR yield elevated error rates in Tamil'.",
+      "Indic-Transcribe card table: OmniASR LLM 7B Tamil 40.6; OmniASR CTC 7B Tamil 58.3.",
+      "No Tamil practitioner reports found."
+    ],
+    "unknowns": "Streaming support; Windows install."
+  },
+  {
+    "id": "C8",
+    "name": "AI4Bharat IndicConformer Tamil-only large (ai4bharat/indicconformer_stt_ta_hybrid_ctc_rnnt_large)",
+    "type": "speech recognition model, 120M parameters, Conformer-Large hybrid CTC-RNNT, Tamil only",
+    "runs_where": "Local. MIT license, gated. Very small (about 0.25 GB fp16).",
+    "evidence": [
+      "Model card: '17 conformer blocks with 512 as the model dimension', Tamil only, 16 kHz mono input.",
+      "Requires the AI4Bharat NeMo fork: 'git clone https://github.com/AI4Bharat/NeMo.git && cd NeMo && git checkout nemo-v2 && bash reinstall.sh' (a bash script; Windows support not documented).",
+      "No WER in the card; not separately evaluated on Voice of India (the paper's Indic Conformer entry is not identified by checkpoint).",
+      "GitHub practitioner (AI-Media-Indexer issue #3) recommended this exact checkpoint for Tamil via NeMo.",
+      "No streaming mentioned. Native-script output."
+    ],
+    "unknowns": "Accuracy; Windows install feasibility."
+  },
+  {
+    "id": "C9",
+    "name": "CONTROL: Sarvam Audio / Saarika cloud speech-to-text API",
+    "type": "cloud API service",
+    "runs_where": "Cloud only. Paid per hour of audio (about Rs 30-45 per hour per Sarvam pricing). Audio is sent to Sarvam servers over the internet.",
+    "evidence": [
+      "Voice of India paper: Sarvam Audio Tamil OIWER 14.2 (best), Saarika 2.5 14.9.",
+      "Sarvam site: 'Streaming speech recognition for 22 Indian languages with low-latency decoding and code-mixed support.' WebSocket streaming API.",
+      "Weights are not available for download."
+    ],
+    "unknowns": "None relevant: it cannot run locally."
+  },
+  {
+    "id": "C10",
+    "name": "CONTROL: Qwen3-ASR-0.6B",
+    "type": "speech recognition model, 600M parameters",
+    "runs_where": "Local. Apache-2.0.",
+    "evidence": [
+      "Model card language list (30 languages + 22 Chinese dialects): Chinese, English, Cantonese, Arabic, German, French, Spanish, Portuguese, Indonesian, Italian, Korean, Russian, Thai, Vietnamese, Japanese, Turkish, Hindi, Malay, Dutch, Swedish, Danish, Finnish, Polish, Czech, Filipino, Persian, Greek, Hungarian, Macedonian, Romanian. Tamil is not listed.",
+      "Card: 'support streaming / offline unified inference with single model'.",
+      "Reddit (r/FunMachineLearning): a Hindi/Hinglish fine-tune on 1,000 hours of call audio 'beats Whisper large-v3, Azure and Google on accented Hindi' — no Tamil version exists."
+    ],
+    "unknowns": "None relevant: Tamil unsupported."
+  }
+]

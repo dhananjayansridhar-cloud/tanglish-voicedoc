@@ -1,0 +1,21 @@
+{
+  "output": "cursor",
+  "hotkey": "ctrl+shift+space",
+  "hotkey_mode": "toggle",
+  "start_listening": false,
+  "min_silence_ms": 400,
+  "max_phrase_s": 12.0,
+  "asr_mode": "mixed",
+  "translate": true,
+  "mt_model": "ai4bharat/indictrans2-indic-en-dist-200M",
+  "use_llm": true,
+  "llm": "qwen3:4b",
+  "mic": "communications",
+  "save_audio": true,
+  "sounds": true,
+  "speak_questions": true,
+  "voice": null,
+  "voice_rate": 185,
+  "overlay": false,
+  "replacements": {}
+}

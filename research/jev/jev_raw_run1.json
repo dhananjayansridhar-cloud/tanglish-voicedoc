@@ -1,0 +1,1161 @@
+{
+  "model": "jev-1.13.0",
+  "per_candidate": {
+    "C1": {
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2093,
+        "output_tokens": 147
+      },
+      "answers": {
+        "tamil_accuracy": {
+          "type": "score",
+          "score": 3.0,
+          "confidence": 1.0,
+          "legend": {
+            "0": "Tamil is not supported, or there is no evidence at all about Tamil accuracy.",
+            "1": "Tamil is supported but the only evidence is on clean read speech, or the reported error rate on unscripted conversational Tamil is above 30 percent.",
+            "2": "The reported word error rate on unscripted conversational Tamil is between 15 and 30 percent.",
+            "3": "The reported word error rate on unscripted conversational Tamil is below 15 percent."
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.0,
+            "3": 1.0
+          }
+        },
+        "code_mixed_output": {
+          "type": "score",
+          "score": 1.95,
+          "confidence": 0.93,
+          "legend": {
+            "0": "No evidence of code-mixing support, or evidence that mixed speech is forced into one language or mis-transcribed.",
+            "1": "Code-mixed speech is handled, but English words come out transliterated into Tamil script, or the behaviour is undocumented.",
+            "2": "An explicit documented mode outputs Tamil words in Tamil script and English words in Latin script."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.03,
+            "2": 0.96
+          }
+        },
+        "live_updates": {
+          "type": "score",
+          "score": 0.98,
+          "confidence": 0.96,
+          "legend": {
+            "0": "Only suited to processing finished recordings or long files in batch.",
+            "1": "Can transcribe each phrase after the user pauses, by cutting audio at pauses, so text appears phrase by phrase.",
+            "2": "Supports streaming output with partial words appearing while the user is still speaking."
+          },
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.98,
+            "2": 0.0
+          }
+        },
+        "fits_6gb": {
+          "type": "score",
+          "score": 1.28,
+          "confidence": 0.48,
+          "legend": {
+            "0": "Cannot run locally, or needs more than 6 GB of GPU memory by itself.",
+            "1": "Fits in 6 GB by itself but would leave little room (under about 2 GB) for the other two models, or its memory use is unknown and plausibly large.",
+            "2": "Small enough (about 2.5 GB or less for its weights) to leave room for a text model and a text-to-speech model."
+          },
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.66,
+            "2": 0.31
+          }
+        },
+        "independent_validation": {
+          "type": "score",
+          "score": 0.0,
+          "confidence": 0.99,
+          "legend": {
+            "0": "No evidence of Tamil use at all, or only the developer's own claims.",
+            "1": "An independent benchmark or at least one independent practitioner report on Tamil exists.",
+            "2": "An independent benchmark on conversational Tamil plus independent practitioner or community reports exist."
+          },
+          "probabilities": {
+            "0": 1.0,
+            "1": 0.0,
+            "2": 0.0
+          }
+        },
+        "windows_setup": {
+          "type": "score",
+          "score": 0.99,
+          "confidence": 0.99,
+          "legend": {
+            "0": "Requires Linux-only build scripts, a custom fork, or cannot be downloaded.",
+            "1": "Installable with Python on Windows but needs gated access, custom remote code, or conversion steps.",
+            "2": "Plain pip-installable with widely documented Windows use."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.99,
+            "2": 0.0
+          }
+        },
+        "requires_cloud": {
+          "type": "noul",
+          "noul": 0.09
+        },
+        "supports_tamil": {
+          "type": "noul",
+          "noul": 0.94
+        },
+        "confidence_signal": {
+          "type": "noul",
+          "noul": 0.19
+        }
+      }
+    },
+    "C2": {
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1688,
+        "output_tokens": 147
+      },
+      "answers": {
+        "tamil_accuracy": {
+          "type": "score",
+          "score": 2.82,
+          "confidence": 0.82,
+          "legend": {
+            "0": "Tamil is not supported, or there is no evidence at all about Tamil accuracy.",
+            "1": "Tamil is supported but the only evidence is on clean read speech, or the reported error rate on unscripted conversational Tamil is above 30 percent.",
+            "2": "The reported word error rate on unscripted conversational Tamil is between 15 and 30 percent.",
+            "3": "The reported word error rate on unscripted conversational Tamil is below 15 percent."
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.08,
+            "2": 0.0,
+            "3": 0.92
+          }
+        },
+        "code_mixed_output": {
+          "type": "score",
+          "score": 1.0,
+          "confidence": 0.99,
+          "legend": {
+            "0": "No evidence of code-mixing support, or evidence that mixed speech is forced into one language or mis-transcribed.",
+            "1": "Code-mixed speech is handled, but English words come out transliterated into Tamil script, or the behaviour is undocumented.",
+            "2": "An explicit documented mode outputs Tamil words in Tamil script and English words in Latin script."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.99,
+            "2": 0.0
+          }
+        },
+        "live_updates": {
+          "type": "score",
+          "score": 0.97,
+          "confidence": 0.95,
+          "legend": {
+            "0": "Only suited to processing finished recordings or long files in batch.",
+            "1": "Can transcribe each phrase after the user pauses, by cutting audio at pauses, so text appears phrase by phrase.",
+            "2": "Supports streaming output with partial words appearing while the user is still speaking."
+          },
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.97,
+            "2": 0.0
+          }
+        },
+        "fits_6gb": {
+          "type": "score",
+          "score": 1.75,
+          "confidence": 0.62,
+          "legend": {
+            "0": "Cannot run locally, or needs more than 6 GB of GPU memory by itself.",
+            "1": "Fits in 6 GB by itself but would leave little room (under about 2 GB) for the other two models, or its memory use is unknown and plausibly large.",
+            "2": "Small enough (about 2.5 GB or less for its weights) to leave room for a text model and a text-to-speech model."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.24,
+            "2": 0.75
+          }
+        },
+        "independent_validation": {
+          "type": "score",
+          "score": 0.01,
+          "confidence": 0.98,
+          "legend": {
+            "0": "No evidence of Tamil use at all, or only the developer's own claims.",
+            "1": "An independent benchmark or at least one independent practitioner report on Tamil exists.",
+            "2": "An independent benchmark on conversational Tamil plus independent practitioner or community reports exist."
+          },
+          "probabilities": {
+            "0": 0.99,
+            "1": 0.01,
+            "2": 0.0
+          }
+        },
+        "windows_setup": {
+          "type": "score",
+          "score": 0.97,
+          "confidence": 0.96,
+          "legend": {
+            "0": "Requires Linux-only build scripts, a custom fork, or cannot be downloaded.",
+            "1": "Installable with Python on Windows but needs gated access, custom remote code, or conversion steps.",
+            "2": "Plain pip-installable with widely documented Windows use."
+          },
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.97,
+            "2": 0.0
+          }
+        },
+        "requires_cloud": {
+          "type": "noul",
+          "noul": 0.07
+        },
+        "supports_tamil": {
+          "type": "noul",
+          "noul": 0.95
+        },
+        "confidence_signal": {
+          "type": "noul",
+          "noul": 0.17
+        }
+      }
+    },
+    "C3": {
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1917,
+        "output_tokens": 147
+      },
+      "answers": {
+        "tamil_accuracy": {
+          "type": "score",
+          "score": 1.99,
+          "confidence": 0.97,
+          "legend": {
+            "0": "Tamil is not supported, or there is no evidence at all about Tamil accuracy.",
+            "1": "Tamil is supported but the only evidence is on clean read speech, or the reported error rate on unscripted conversational Tamil is above 30 percent.",
+            "2": "The reported word error rate on unscripted conversational Tamil is between 15 and 30 percent.",
+            "3": "The reported word error rate on unscripted conversational Tamil is below 15 percent."
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.02,
+            "2": 0.97,
+            "3": 0.01
+          }
+        },
+        "code_mixed_output": {
+          "type": "score",
+          "score": 1.0,
+          "confidence": 0.99,
+          "legend": {
+            "0": "No evidence of code-mixing support, or evidence that mixed speech is forced into one language or mis-transcribed.",
+            "1": "Code-mixed speech is handled, but English words come out transliterated into Tamil script, or the behaviour is undocumented.",
+            "2": "An explicit documented mode outputs Tamil words in Tamil script and English words in Latin script."
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 1.0,
+            "2": 0.0
+          }
+        },
+        "live_updates": {
+          "type": "score",
+          "score": 0.54,
+          "confidence": 0.2,
+          "legend": {
+            "0": "Only suited to processing finished recordings or long files in batch.",
+            "1": "Can transcribe each phrase after the user pauses, by cutting audio at pauses, so text appears phrase by phrase.",
+            "2": "Supports streaming output with partial words appearing while the user is still speaking."
+          },
+          "probabilities": {
+            "0": 0.5,
+            "1": 0.47,
+            "2": 0.03
+          }
+        },
+        "fits_6gb": {
+          "type": "score",
+          "score": 1.83,
+          "confidence": 0.75,
+          "legend": {
+            "0": "Cannot run locally, or needs more than 6 GB of GPU memory by itself.",
+            "1": "Fits in 6 GB by itself but would leave little room (under about 2 GB) for the other two models, or its memory use is unknown and plausibly large.",
+            "2": "Small enough (about 2.5 GB or less for its weights) to leave room for a text model and a text-to-speech model."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.15,
+            "2": 0.84
+          }
+        },
+        "independent_validation": {
+          "type": "score",
+          "score": 1.73,
+          "confidence": 0.59,
+          "legend": {
+            "0": "No evidence of Tamil use at all, or only the developer's own claims.",
+            "1": "An independent benchmark or at least one independent practitioner report on Tamil exists.",
+            "2": "An independent benchmark on conversational Tamil plus independent practitioner or community reports exist."
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.27,
+            "2": 0.73
+          }
+        },
+        "windows_setup": {
+          "type": "score",
+          "score": 1.0,
+          "confidence": 1.0,
+          "legend": {
+            "0": "Requires Linux-only build scripts, a custom fork, or cannot be downloaded.",
+            "1": "Installable with Python on Windows but needs gated access, custom remote code, or conversion steps.",
+            "2": "Plain pip-installable with widely documented Windows use."
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 1.0,
+            "2": 0.0
+          }
+        },
+        "requires_cloud": {
+          "type": "noul",
+          "noul": 0.07
+        },
+        "supports_tamil": {
+          "type": "noul",
+          "noul": 0.97
+        },
+        "confidence_signal": {
+          "type": "noul",
+          "noul": 0.76
+        }
+      }
+    },
+    "C4": {
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1957,
+        "output_tokens": 147
+      },
+      "answers": {
+        "tamil_accuracy": {
+          "type": "score",
+          "score": 1.1,
+          "confidence": 0.9,
+          "legend": {
+            "0": "Tamil is not supported, or there is no evidence at all about Tamil accuracy.",
+            "1": "Tamil is supported but the only evidence is on clean read speech, or the reported error rate on unscripted conversational Tamil is above 30 percent.",
+            "2": "The reported word error rate on unscripted conversational Tamil is between 15 and 30 percent.",
+            "3": "The reported word error rate on unscripted conversational Tamil is below 15 percent."
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.9,
+            "2": 0.1,
+            "3": 0.0
+          }
+        },
+        "code_mixed_output": {
+          "type": "score",
+          "score": 0.16,
+          "confidence": 0.76,
+          "legend": {
+            "0": "No evidence of code-mixing support, or evidence that mixed speech is forced into one language or mis-transcribed.",
+            "1": "Code-mixed speech is handled, but English words come out transliterated into Tamil script, or the behaviour is undocumented.",
+            "2": "An explicit documented mode outputs Tamil words in Tamil script and English words in Latin script."
+          },
+          "probabilities": {
+            "0": 0.84,
+            "1": 0.16,
+            "2": 0.0
+          }
+        },
+        "live_updates": {
+          "type": "score",
+          "score": 2.0,
+          "confidence": 0.99,
+          "legend": {
+            "0": "Only suited to processing finished recordings or long files in batch.",
+            "1": "Can transcribe each phrase after the user pauses, by cutting audio at pauses, so text appears phrase by phrase.",
+            "2": "Supports streaming output with partial words appearing while the user is still speaking."
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 1.0
+          }
+        },
+        "fits_6gb": {
+          "type": "score",
+          "score": 1.84,
+          "confidence": 0.75,
+          "legend": {
+            "0": "Cannot run locally, or needs more than 6 GB of GPU memory by itself.",
+            "1": "Fits in 6 GB by itself but would leave little room (under about 2 GB) for the other two models, or its memory use is unknown and plausibly large.",
+            "2": "Small enough (about 2.5 GB or less for its weights) to leave room for a text model and a text-to-speech model."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.15,
+            "2": 0.84
+          }
+        },
+        "independent_validation": {
+          "type": "score",
+          "score": 1.09,
+          "confidence": 0.87,
+          "legend": {
+            "0": "No evidence of Tamil use at all, or only the developer's own claims.",
+            "1": "An independent benchmark or at least one independent practitioner report on Tamil exists.",
+            "2": "An independent benchmark on conversational Tamil plus independent practitioner or community reports exist."
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.91,
+            "2": 0.09
+          }
+        },
+        "windows_setup": {
+          "type": "score",
+          "score": 1.91,
+          "confidence": 0.86,
+          "legend": {
+            "0": "Requires Linux-only build scripts, a custom fork, or cannot be downloaded.",
+            "1": "Installable with Python on Windows but needs gated access, custom remote code, or conversion steps.",
+            "2": "Plain pip-installable with widely documented Windows use."
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.09,
+            "2": 0.91
+          }
+        },
+        "requires_cloud": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "supports_tamil": {
+          "type": "noul",
+          "noul": 0.84
+        },
+        "confidence_signal": {
+          "type": "noul",
+          "noul": 0.42
+        }
+      }
+    },
+    "C5": {
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1675,
+        "output_tokens": 147
+      },
+      "answers": {
+        "tamil_accuracy": {
+          "type": "score",
+          "score": 1.01,
+          "confidence": 0.99,
+          "legend": {
+            "0": "Tamil is not supported, or there is no evidence at all about Tamil accuracy.",
+            "1": "Tamil is supported but the only evidence is on clean read speech, or the reported error rate on unscripted conversational Tamil is above 30 percent.",
+            "2": "The reported word error rate on unscripted conversational Tamil is between 15 and 30 percent.",
+            "3": "The reported word error rate on unscripted conversational Tamil is below 15 percent."
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 1.0,
+            "2": 0.0,
+            "3": 0.0
+          }
+        },
+        "code_mixed_output": {
+          "type": "score",
+          "score": 0.48,
+          "confidence": 0.28,
+          "legend": {
+            "0": "No evidence of code-mixing support, or evidence that mixed speech is forced into one language or mis-transcribed.",
+            "1": "Code-mixed speech is handled, but English words come out transliterated into Tamil script, or the behaviour is undocumented.",
+            "2": "An explicit documented mode outputs Tamil words in Tamil script and English words in Latin script."
+          },
+          "probabilities": {
+            "0": 0.52,
+            "1": 0.48,
+            "2": 0.0
+          }
+        },
+        "live_updates": {
+          "type": "score",
+          "score": 0.98,
+          "confidence": 0.96,
+          "legend": {
+            "0": "Only suited to processing finished recordings or long files in batch.",
+            "1": "Can transcribe each phrase after the user pauses, by cutting audio at pauses, so text appears phrase by phrase.",
+            "2": "Supports streaming output with partial words appearing while the user is still speaking."
+          },
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.98,
+            "2": 0.0
+          }
+        },
+        "fits_6gb": {
+          "type": "score",
+          "score": 1.86,
+          "confidence": 0.79,
+          "legend": {
+            "0": "Cannot run locally, or needs more than 6 GB of GPU memory by itself.",
+            "1": "Fits in 6 GB by itself but would leave little room (under about 2 GB) for the other two models, or its memory use is unknown and plausibly large.",
+            "2": "Small enough (about 2.5 GB or less for its weights) to leave room for a text model and a text-to-speech model."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.12,
+            "2": 0.87
+          }
+        },
+        "independent_validation": {
+          "type": "score",
+          "score": 0.86,
+          "confidence": 0.78,
+          "legend": {
+            "0": "No evidence of Tamil use at all, or only the developer's own claims.",
+            "1": "An independent benchmark or at least one independent practitioner report on Tamil exists.",
+            "2": "An independent benchmark on conversational Tamil plus independent practitioner or community reports exist."
+          },
+          "probabilities": {
+            "0": 0.14,
+            "1": 0.86,
+            "2": 0.0
+          }
+        },
+        "windows_setup": {
+          "type": "score",
+          "score": 1.01,
+          "confidence": 0.99,
+          "legend": {
+            "0": "Requires Linux-only build scripts, a custom fork, or cannot be downloaded.",
+            "1": "Installable with Python on Windows but needs gated access, custom remote code, or conversion steps.",
+            "2": "Plain pip-installable with widely documented Windows use."
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.99,
+            "2": 0.01
+          }
+        },
+        "requires_cloud": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "supports_tamil": {
+          "type": "noul",
+          "noul": 0.86
+        },
+        "confidence_signal": {
+          "type": "noul",
+          "noul": 0.4
+        }
+      }
+    },
+    "C6": {
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1610,
+        "output_tokens": 147
+      },
+      "answers": {
+        "tamil_accuracy": {
+          "type": "score",
+          "score": 0.72,
+          "confidence": 0.72,
+          "legend": {
+            "0": "Tamil is not supported, or there is no evidence at all about Tamil accuracy.",
+            "1": "Tamil is supported but the only evidence is on clean read speech, or the reported error rate on unscripted conversational Tamil is above 30 percent.",
+            "2": "The reported word error rate on unscripted conversational Tamil is between 15 and 30 percent.",
+            "3": "The reported word error rate on unscripted conversational Tamil is below 15 percent."
+          },
+          "probabilities": {
+            "0": 0.28,
+            "1": 0.72,
+            "2": 0.0,
+            "3": 0.0
+          }
+        },
+        "code_mixed_output": {
+          "type": "score",
+          "score": 0.17,
+          "confidence": 0.74,
+          "legend": {
+            "0": "No evidence of code-mixing support, or evidence that mixed speech is forced into one language or mis-transcribed.",
+            "1": "Code-mixed speech is handled, but English words come out transliterated into Tamil script, or the behaviour is undocumented.",
+            "2": "An explicit documented mode outputs Tamil words in Tamil script and English words in Latin script."
+          },
+          "probabilities": {
+            "0": 0.83,
+            "1": 0.17,
+            "2": 0.0
+          }
+        },
+        "live_updates": {
+          "type": "score",
+          "score": 0.8,
+          "confidence": 0.7,
+          "legend": {
+            "0": "Only suited to processing finished recordings or long files in batch.",
+            "1": "Can transcribe each phrase after the user pauses, by cutting audio at pauses, so text appears phrase by phrase.",
+            "2": "Supports streaming output with partial words appearing while the user is still speaking."
+          },
+          "probabilities": {
+            "0": 0.2,
+            "1": 0.8,
+            "2": 0.0
+          }
+        },
+        "fits_6gb": {
+          "type": "score",
+          "score": 0.98,
+          "confidence": 0.67,
+          "legend": {
+            "0": "Cannot run locally, or needs more than 6 GB of GPU memory by itself.",
+            "1": "Fits in 6 GB by itself but would leave little room (under about 2 GB) for the other two models, or its memory use is unknown and plausibly large.",
+            "2": "Small enough (about 2.5 GB or less for its weights) to leave room for a text model and a text-to-speech model."
+          },
+          "probabilities": {
+            "0": 0.12,
+            "1": 0.78,
+            "2": 0.1
+          }
+        },
+        "independent_validation": {
+          "type": "score",
+          "score": 0.93,
+          "confidence": 0.87,
+          "legend": {
+            "0": "No evidence of Tamil use at all, or only the developer's own claims.",
+            "1": "An independent benchmark or at least one independent practitioner report on Tamil exists.",
+            "2": "An independent benchmark on conversational Tamil plus independent practitioner or community reports exist."
+          },
+          "probabilities": {
+            "0": 0.08,
+            "1": 0.91,
+            "2": 0.01
+          }
+        },
+        "windows_setup": {
+          "type": "score",
+          "score": 0.98,
+          "confidence": 0.97,
+          "legend": {
+            "0": "Requires Linux-only build scripts, a custom fork, or cannot be downloaded.",
+            "1": "Installable with Python on Windows but needs gated access, custom remote code, or conversion steps.",
+            "2": "Plain pip-installable with widely documented Windows use."
+          },
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.98,
+            "2": 0.0
+          }
+        },
+        "requires_cloud": {
+          "type": "noul",
+          "noul": 0.13
+        },
+        "supports_tamil": {
+          "type": "noul",
+          "noul": 0.37
+        },
+        "confidence_signal": {
+          "type": "noul",
+          "noul": 0.14
+        }
+      }
+    },
+    "C7": {
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1527,
+        "output_tokens": 147
+      },
+      "answers": {
+        "tamil_accuracy": {
+          "type": "score",
+          "score": 1.01,
+          "confidence": 0.99,
+          "legend": {
+            "0": "Tamil is not supported, or there is no evidence at all about Tamil accuracy.",
+            "1": "Tamil is supported but the only evidence is on clean read speech, or the reported error rate on unscripted conversational Tamil is above 30 percent.",
+            "2": "The reported word error rate on unscripted conversational Tamil is between 15 and 30 percent.",
+            "3": "The reported word error rate on unscripted conversational Tamil is below 15 percent."
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.99,
+            "2": 0.01,
+            "3": 0.0
+          }
+        },
+        "code_mixed_output": {
+          "type": "score",
+          "score": 0.3,
+          "confidence": 0.55,
+          "legend": {
+            "0": "No evidence of code-mixing support, or evidence that mixed speech is forced into one language or mis-transcribed.",
+            "1": "Code-mixed speech is handled, but English words come out transliterated into Tamil script, or the behaviour is undocumented.",
+            "2": "An explicit documented mode outputs Tamil words in Tamil script and English words in Latin script."
+          },
+          "probabilities": {
+            "0": 0.7,
+            "1": 0.3,
+            "2": 0.0
+          }
+        },
+        "live_updates": {
+          "type": "score",
+          "score": 0.5,
+          "confidence": 0.25,
+          "legend": {
+            "0": "Only suited to processing finished recordings or long files in batch.",
+            "1": "Can transcribe each phrase after the user pauses, by cutting audio at pauses, so text appears phrase by phrase.",
+            "2": "Supports streaming output with partial words appearing while the user is still speaking."
+          },
+          "probabilities": {
+            "0": 0.53,
+            "1": 0.44,
+            "2": 0.03
+          }
+        },
+        "fits_6gb": {
+          "type": "score",
+          "score": 1.93,
+          "confidence": 0.89,
+          "legend": {
+            "0": "Cannot run locally, or needs more than 6 GB of GPU memory by itself.",
+            "1": "Fits in 6 GB by itself but would leave little room (under about 2 GB) for the other two models, or its memory use is unknown and plausibly large.",
+            "2": "Small enough (about 2.5 GB or less for its weights) to leave room for a text model and a text-to-speech model."
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.07,
+            "2": 0.93
+          }
+        },
+        "independent_validation": {
+          "type": "score",
+          "score": 0.98,
+          "confidence": 0.96,
+          "legend": {
+            "0": "No evidence of Tamil use at all, or only the developer's own claims.",
+            "1": "An independent benchmark or at least one independent practitioner report on Tamil exists.",
+            "2": "An independent benchmark on conversational Tamil plus independent practitioner or community reports exist."
+          },
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.97,
+            "2": 0.01
+          }
+        },
+        "windows_setup": {
+          "type": "score",
+          "score": 0.68,
+          "confidence": 0.5,
+          "legend": {
+            "0": "Requires Linux-only build scripts, a custom fork, or cannot be downloaded.",
+            "1": "Installable with Python on Windows but needs gated access, custom remote code, or conversion steps.",
+            "2": "Plain pip-installable with widely documented Windows use."
+          },
+          "probabilities": {
+            "0": 0.32,
+            "1": 0.67,
+            "2": 0.01
+          }
+        },
+        "requires_cloud": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "supports_tamil": {
+          "type": "noul",
+          "noul": 0.82
+        },
+        "confidence_signal": {
+          "type": "noul",
+          "noul": 0.19
+        }
+      }
+    },
+    "C8": {
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1611,
+        "output_tokens": 147
+      },
+      "answers": {
+        "tamil_accuracy": {
+          "type": "score",
+          "score": 0.23,
+          "confidence": 0.77,
+          "legend": {
+            "0": "Tamil is not supported, or there is no evidence at all about Tamil accuracy.",
+            "1": "Tamil is supported but the only evidence is on clean read speech, or the reported error rate on unscripted conversational Tamil is above 30 percent.",
+            "2": "The reported word error rate on unscripted conversational Tamil is between 15 and 30 percent.",
+            "3": "The reported word error rate on unscripted conversational Tamil is below 15 percent."
+          },
+          "probabilities": {
+            "0": 0.77,
+            "1": 0.23,
+            "2": 0.0,
+            "3": 0.0
+          }
+        },
+        "code_mixed_output": {
+          "type": "score",
+          "score": 0.07,
+          "confidence": 0.89,
+          "legend": {
+            "0": "No evidence of code-mixing support, or evidence that mixed speech is forced into one language or mis-transcribed.",
+            "1": "Code-mixed speech is handled, but English words come out transliterated into Tamil script, or the behaviour is undocumented.",
+            "2": "An explicit documented mode outputs Tamil words in Tamil script and English words in Latin script."
+          },
+          "probabilities": {
+            "0": 0.93,
+            "1": 0.07,
+            "2": 0.0
+          }
+        },
+        "live_updates": {
+          "type": "score",
+          "score": 0.66,
+          "confidence": 0.24,
+          "legend": {
+            "0": "Only suited to processing finished recordings or long files in batch.",
+            "1": "Can transcribe each phrase after the user pauses, by cutting audio at pauses, so text appears phrase by phrase.",
+            "2": "Supports streaming output with partial words appearing while the user is still speaking."
+          },
+          "probabilities": {
+            "0": 0.43,
+            "1": 0.49,
+            "2": 0.08
+          }
+        },
+        "fits_6gb": {
+          "type": "score",
+          "score": 1.96,
+          "confidence": 0.94,
+          "legend": {
+            "0": "Cannot run locally, or needs more than 6 GB of GPU memory by itself.",
+            "1": "Fits in 6 GB by itself but would leave little room (under about 2 GB) for the other two models, or its memory use is unknown and plausibly large.",
+            "2": "Small enough (about 2.5 GB or less for its weights) to leave room for a text model and a text-to-speech model."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.03,
+            "2": 0.96
+          }
+        },
+        "independent_validation": {
+          "type": "score",
+          "score": 0.96,
+          "confidence": 0.94,
+          "legend": {
+            "0": "No evidence of Tamil use at all, or only the developer's own claims.",
+            "1": "An independent benchmark or at least one independent practitioner report on Tamil exists.",
+            "2": "An independent benchmark on conversational Tamil plus independent practitioner or community reports exist."
+          },
+          "probabilities": {
+            "0": 0.04,
+            "1": 0.96,
+            "2": 0.0
+          }
+        },
+        "windows_setup": {
+          "type": "score",
+          "score": 0.09,
+          "confidence": 0.87,
+          "legend": {
+            "0": "Requires Linux-only build scripts, a custom fork, or cannot be downloaded.",
+            "1": "Installable with Python on Windows but needs gated access, custom remote code, or conversion steps.",
+            "2": "Plain pip-installable with widely documented Windows use."
+          },
+          "probabilities": {
+            "0": 0.91,
+            "1": 0.09,
+            "2": 0.0
+          }
+        },
+        "requires_cloud": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "supports_tamil": {
+          "type": "noul",
+          "noul": 0.94
+        },
+        "confidence_signal": {
+          "type": "noul",
+          "noul": 0.24
+        }
+      }
+    },
+    "C9": {
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1501,
+        "output_tokens": 147
+      },
+      "answers": {
+        "tamil_accuracy": {
+          "type": "score",
+          "score": 2.78,
+          "confidence": 0.78,
+          "legend": {
+            "0": "Tamil is not supported, or there is no evidence at all about Tamil accuracy.",
+            "1": "Tamil is supported but the only evidence is on clean read speech, or the reported error rate on unscripted conversational Tamil is above 30 percent.",
+            "2": "The reported word error rate on unscripted conversational Tamil is between 15 and 30 percent.",
+            "3": "The reported word error rate on unscripted conversational Tamil is below 15 percent."
+          },
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.04,
+            "2": 0.06,
+            "3": 0.88
+          }
+        },
+        "code_mixed_output": {
+          "type": "score",
+          "score": 0.97,
+          "confidence": 0.78,
+          "legend": {
+            "0": "No evidence of code-mixing support, or evidence that mixed speech is forced into one language or mis-transcribed.",
+            "1": "Code-mixed speech is handled, but English words come out transliterated into Tamil script, or the behaviour is undocumented.",
+            "2": "An explicit documented mode outputs Tamil words in Tamil script and English words in Latin script."
+          },
+          "probabilities": {
+            "0": 0.09,
+            "1": 0.85,
+            "2": 0.06
+          }
+        },
+        "live_updates": {
+          "type": "score",
+          "score": 1.95,
+          "confidence": 0.93,
+          "legend": {
+            "0": "Only suited to processing finished recordings or long files in batch.",
+            "1": "Can transcribe each phrase after the user pauses, by cutting audio at pauses, so text appears phrase by phrase.",
+            "2": "Supports streaming output with partial words appearing while the user is still speaking."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.02,
+            "2": 0.97
+          }
+        },
+        "fits_6gb": {
+          "type": "score",
+          "score": 0.0,
+          "confidence": 1.0,
+          "legend": {
+            "0": "Cannot run locally, or needs more than 6 GB of GPU memory by itself.",
+            "1": "Fits in 6 GB by itself but would leave little room (under about 2 GB) for the other two models, or its memory use is unknown and plausibly large.",
+            "2": "Small enough (about 2.5 GB or less for its weights) to leave room for a text model and a text-to-speech model."
+          },
+          "probabilities": {
+            "0": 1.0,
+            "1": 0.0,
+            "2": 0.0
+          }
+        },
+        "independent_validation": {
+          "type": "score",
+          "score": 1.0,
+          "confidence": 0.96,
+          "legend": {
+            "0": "No evidence of Tamil use at all, or only the developer's own claims.",
+            "1": "An independent benchmark or at least one independent practitioner report on Tamil exists.",
+            "2": "An independent benchmark on conversational Tamil plus independent practitioner or community reports exist."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.97,
+            "2": 0.02
+          }
+        },
+        "windows_setup": {
+          "type": "score",
+          "score": 0.36,
+          "confidence": 0.46,
+          "legend": {
+            "0": "Requires Linux-only build scripts, a custom fork, or cannot be downloaded.",
+            "1": "Installable with Python on Windows but needs gated access, custom remote code, or conversion steps.",
+            "2": "Plain pip-installable with widely documented Windows use."
+          },
+          "probabilities": {
+            "0": 0.65,
+            "1": 0.35,
+            "2": 0.0
+          }
+        },
+        "requires_cloud": {
+          "type": "noul",
+          "noul": 0.99
+        },
+        "supports_tamil": {
+          "type": "noul",
+          "noul": 0.94
+        },
+        "confidence_signal": {
+          "type": "noul",
+          "noul": 0.25
+        }
+      }
+    },
+    "C10": {
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1556,
+        "output_tokens": 147
+      },
+      "answers": {
+        "tamil_accuracy": {
+          "type": "score",
+          "score": 0.0,
+          "confidence": 1.0,
+          "legend": {
+            "0": "Tamil is not supported, or there is no evidence at all about Tamil accuracy.",
+            "1": "Tamil is supported but the only evidence is on clean read speech, or the reported error rate on unscripted conversational Tamil is above 30 percent.",
+            "2": "The reported word error rate on unscripted conversational Tamil is between 15 and 30 percent.",
+            "3": "The reported word error rate on unscripted conversational Tamil is below 15 percent."
+          },
+          "probabilities": {
+            "0": 1.0,
+            "1": 0.0,
+            "2": 0.0,
+            "3": 0.0
+          }
+        },
+        "code_mixed_output": {
+          "type": "score",
+          "score": 0.03,
+          "confidence": 0.96,
+          "legend": {
+            "0": "No evidence of code-mixing support, or evidence that mixed speech is forced into one language or mis-transcribed.",
+            "1": "Code-mixed speech is handled, but English words come out transliterated into Tamil script, or the behaviour is undocumented.",
+            "2": "An explicit documented mode outputs Tamil words in Tamil script and English words in Latin script."
+          },
+          "probabilities": {
+            "0": 0.97,
+            "1": 0.03,
+            "2": 0.0
+          }
+        },
+        "live_updates": {
+          "type": "score",
+          "score": 1.45,
+          "confidence": 0.17,
+          "legend": {
+            "0": "Only suited to processing finished recordings or long files in batch.",
+            "1": "Can transcribe each phrase after the user pauses, by cutting audio at pauses, so text appears phrase by phrase.",
+            "2": "Supports streaming output with partial words appearing while the user is still speaking."
+          },
+          "probabilities": {
+            "0": 0.26,
+            "1": 0.04,
+            "2": 0.7
+          }
+        },
+        "fits_6gb": {
+          "type": "score",
+          "score": 1.72,
+          "confidence": 0.59,
+          "legend": {
+            "0": "Cannot run locally, or needs more than 6 GB of GPU memory by itself.",
+            "1": "Fits in 6 GB by itself but would leave little room (under about 2 GB) for the other two models, or its memory use is unknown and plausibly large.",
+            "2": "Small enough (about 2.5 GB or less for its weights) to leave room for a text model and a text-to-speech model."
+          },
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.23,
+            "2": 0.75
+          }
+        },
+        "independent_validation": {
+          "type": "score",
+          "score": 0.0,
+          "confidence": 1.0,
+          "legend": {
+            "0": "No evidence of Tamil use at all, or only the developer's own claims.",
+            "1": "An independent benchmark or at least one independent practitioner report on Tamil exists.",
+            "2": "An independent benchmark on conversational Tamil plus independent practitioner or community reports exist."
+          },
+          "probabilities": {
+            "0": 1.0,
+            "1": 0.0,
+            "2": 0.0
+          }
+        },
+        "windows_setup": {
+          "type": "score",
+          "score": 0.95,
+          "confidence": 0.21,
+          "legend": {
+            "0": "Requires Linux-only build scripts, a custom fork, or cannot be downloaded.",
+            "1": "Installable with Python on Windows but needs gated access, custom remote code, or conversion steps.",
+            "2": "Plain pip-installable with widely documented Windows use."
+          },
+          "probabilities": {
+            "0": 0.29,
+            "1": 0.47,
+            "2": 0.24
+          }
+        },
+        "requires_cloud": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "supports_tamil": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "confidence_signal": {
+          "type": "noul",
+          "noul": 0.23
+        }
+      }
+    }
+  },
+  "default_choice": {
+    "model": "jev-1.13.0",
+    "usage": {
+      "input_tokens": 4926,
+      "output_tokens": 100
+    },
+    "answers": {
+      "default_model": {
+        "type": "choice",
+        "choice": "C1",
+        "confidence": 0.63,
+        "probabilities": {
+          "C5": 0.0,
+          "C3": 0.15,
+          "C9": 0.0,
+          "C1": 0.68,
+          "C10": 0.0,
+          "C8": 0.0,
+          "C6": 0.0,
+          "C4": 0.17,
+          "C7": 0.0,
+          "C2": 0.0
+        }
+      }
+    }
+  }
+}

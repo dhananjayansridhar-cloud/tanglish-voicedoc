@@ -1,0 +1,6 @@
+# One YouTube URL per line, optional "| note". Used by scripts/testbed.py.
+https://www.youtube.com/shorts/jOT8eHwlXHQ | TSEK tech talk, fast continuous Tanglish, single speaker
+https://www.youtube.com/shorts/upVmMFjZGQ0 | Kamal Haasan interview clip, film names and idioms
+https://www.youtube.com/shorts/zm_obU5n8B0 | comedy, several speakers, background music and laughter
+https://www.youtube.com/shorts/wG6xp3AmNaM | added by user 2026-09-24
+https://www.youtube.com/shorts/8xgD-2qYdr0 | added by user 2026-09-24

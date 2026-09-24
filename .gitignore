@@ -1,0 +1,27 @@
+.venv/
+.cache/
+models/
+notes/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.md.bak
+.*.md.*.tmp
+# build output (scripts/build_app.ps1 recreates it)
+VoiceDoc.exe
+# third-party YouTube audio/captions: re-fetched by scripts/testbed.py from samples/testbed.txt
+samples/yt/*.wav
+samples/yt/*.vtt
+samples/yt/*.log
+samples/testbed_run.log
+# verbatim duplicate archive of research/ and research.md, and raw third-party scrapes
+# (usernames, captions); the curated research_*.md files and youtube_summaries.md keep the findings
+research_raw/
+research/05_social/reddit/reddit_raw/
+research/05_social/x/x_raw/
+research/youtube/metadata/
+research/youtube/transcripts/
+# local tool state
+.remember/
+.claude/
+output/
